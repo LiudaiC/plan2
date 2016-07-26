@@ -1,0 +1,458 @@
+/**
+ * @file detail.scss
+ * @author deo
+ *
+ * 详情页公共样式
+ */
+
+@import "../common/css/global.scss";
+@import "../common/css/ui.scss";
+@import "../common/css/rich.scss";
+@import "../common/middleware/attach/attachWrapper.scss";
+
+.main {
+    padding-bottom: rem(44px);
+
+    &.nofixbar {
+        padding-bottom: rem(10px);
+    }
+}
+
+.layout {
+    @include border-1px(bottom);
+
+    &.detail-summary {
+        padding-right: 0;
+        padding-bottom: 0;
+
+        .summary-attach-container {
+            padding: 0;
+            margin: 0;
+        }
+
+        .layout-section {
+            padding-bottom: rem(10px);
+        }
+
+        &.detail-summary-onlyattach {
+            .summary-attach-container {
+                padding-top: 0;
+            }
+        }
+
+        .summary-attach {
+            padding: 0;
+            margin: 0;
+        }
+    }
+}
+
+.sub-title {
+    color: $gray;
+    padding-bottom: rem(14px);
+}
+
+// title 部分
+.detail-title {
+    @include clearfix();
+    @include border-1px(bottom);
+    position: relative;
+
+    > div {
+        // display: inline-block;
+        // vertical-align: middle;
+
+        p {
+            display: block;
+            clear: both;
+            color: $color-tips;
+            font-size: rem(12px);
+            line-height: rem(18px);
+        }
+    }
+
+    .create-user {
+
+        em {
+            @include ellipsis();
+
+            max-width: rem(100px);
+            display: inline-block;
+        }
+    }
+
+    .detail-title-control {
+        position: absolute;
+        top: 50%;
+        width: rem(16px);
+        height: rem(16px);
+        margin-top: rem(-8px);
+        padding-right: rem(15px);
+
+        .detail-checkbox {
+            position: absolute;
+            width: rem(16px);
+            height: rem(16px);
+        }
+    }
+
+    .detail-title-main {
+        margin-right: rem(50px);
+
+        &.not-task-page {
+            margin-left: rem(40px);
+        }
+
+        .detail-title-top {
+            color: $black;
+            font-size: rem(16px);
+            margin-bottom: rem(8px);
+        }
+    }
+
+    .detail-title-right {
+        text-align: right;
+        position: absolute;
+        top: 50%;
+        right: rem(10px);
+        margin-top: rem(-20px);
+
+        .star {
+            display: inline-block;
+            position: relative;
+            margin-top: rem(2px) auto 0 auto;
+            margin-right: rem(10px);
+        }
+
+        .detail-title-state {
+            margin-top: rem(4px);
+            
+            // 没有星星，修正top
+            &-fixed {
+                margin-top: rem(12px);
+            }
+        }
+    }
+}
+
+// 任务描述
+.detail-comments {
+    line-height: rem(16px);
+    padding-right: 0;
+    padding-bottom: rem(8px) !important;
+
+    .sub-title {
+        padding-bottom: rem(10px);
+    }
+
+    .layout-section {
+        margin-top: rem(5px);
+        padding-bottom: rem(5px);
+        line-height: rem(18px);
+        word-break: break-all;
+        overflow: hidden;
+
+        &.word-content {
+            padding-right: rem(15px);
+        }
+
+        &.importance-content,
+        &.donetime-content,
+        &.affair-tagname-content {
+            @include border-1px(top);
+            padding-top: rem(12px);
+
+            em {
+                color: $gray;
+            }
+        }
+    }
+}
+
+/* 可以用来获取实际高宽 */
+.absolute {
+    position: absolute;
+}
+
+.layout-list {
+    
+    // 通用
+    dd {
+        padding: rem(13px) 0 rem(11px) 0;
+        height: auto;
+
+        @include clearfix();
+
+        div {
+            height: 100%;
+        }
+
+        .column-left {
+            color: $gray;
+        }
+
+        .column-middle {
+        }
+
+        .column-right {
+            position: relative;
+            font-size: rem(12px);
+
+            .column-more {
+                position: absolute;
+                right: rem(15px);
+                display: box;
+                box-pack: center;
+                box-align: center;
+
+                em {
+                    vertical-align: middle;
+                    color: $color-tips;
+                }
+
+                .arrow {
+                    margin-left: rem(3px);
+                    @include arrow-more(7px);
+                }
+            }
+        }
+    }
+
+    .data-more {
+        color: $light-gray;
+        text-align: center;
+        height: rem(20px);
+        line-height: rem(20px);
+        padding: rem(13px) 0 rem(11px) 0;
+        text-indent: -10px;
+
+        @include border-1px(top, #e1e4e6);
+    }
+    
+    // 成员
+    $partner-left-width: rem(55px);
+    $partner-right-width: rem(65px);
+
+    &.partner {
+        @include border-1px(bottom);
+
+        dd {
+            height: rem(20px);
+            line-height: rem(20px);
+            @include border-1px(top, #e1e4e6);
+            @include column($partner-left-width, $partner-right-width);
+
+            .column-middle {
+                
+                .column-inner {
+
+                    &.only-one {
+                        margin-right: rem(15px)
+                    }
+                }
+            }
+        }
+    }
+
+    // 下载
+    $attach-left-width: rem(30px);
+    $attach-right-width: rem(65px);
+
+    &.attach {
+        @include border-1px(bottom);
+        
+        .componentAttachItem {
+            @include border-1px(top, #e1e4e6);
+
+            .componentAttachLine {
+                margin-left: 0;
+            }
+        }
+    }
+
+    // 评论
+    $comments-left-width: rem(55px);
+
+    &.comments {
+
+        .sub-title {
+            @include border-1px(bottom, #e1e4e6);
+
+            .comment-total {}
+        }
+
+        dd {
+            @include column($comments-left-width);
+            padding: 0;
+
+            .column-left {
+                padding: rem(13px) 0 rem(11px) 0;
+
+                img {
+                    width: rem(38px);
+                }
+            }
+
+            .column-middle {
+
+                .column-inner {
+                    @include clearfix();
+                    padding: rem(14px) 0 rem(11px) 0;
+
+                    .comments-button {
+                        position: relative;
+                        text-align: right;
+                        display: block;
+                        width: 100%;
+                        right: rem(15px);
+                        margin-top: rem(5px);
+                        color: $blue;
+                    }
+
+                    .componentAttachLine {
+                        background-color: #f8f8f8;
+                        padding-right: 0;
+                        margin-right: rem(10px);
+                        padding-left: rem(10px);
+                    }
+
+                    .componentAttachLeft {
+                        display: initial;
+                    }
+                }
+            }
+        }
+
+        dd:not(:last-child) {
+            .column-inner {
+                @include border-1px(bottom, #e1e4e6);
+            }
+        }
+
+        .list-null {
+            padding: rem(30px) rem(20px) rem(30px) 0;
+            color: $light-gray;
+
+            &-img {
+                width: 100%;
+                height: rem(44px);
+                background: url('../img/no-comments.png') no-repeat 50% 0;
+                background-size: rem(44px);
+            }
+            &-text {
+                margin-top: rem(15px);
+                text-align: center;
+            }
+        }
+
+        .columnu-title {
+            font-size: rem(16px);
+        }
+        .columnu-date {
+            font-size: rem(11px);
+        }
+        .comments-content {
+            margin: rem(10px) 0 rem(5px) 0;
+        }
+
+        .comments-attach {
+            width: 100%;
+
+            div {
+                float: none;
+            }
+            ul, li {
+                @include clearfix();
+            }
+            .componentAttaches {
+                margin-top: rem(10px);
+            }
+            .componentAttachLine {
+                margin-left: 0;
+            }
+        }
+
+        .comments-content {
+            padding-right: rem(15px);
+
+            &-inner {
+                @extend .word-content;
+            }
+        }
+
+        .componentAttachLine {
+            margin-left: 0;
+        }
+    }
+
+    .columnu-date {
+        color: $light-gray;
+    }
+
+}
+
+/**
+ * 底部按钮
+ */
+.fixbar {
+    @include fixbar(3);
+    height: auto;
+    font-size: rem(16px);
+    position: relative;
+    z-index: 10;
+
+    ul {
+        li {
+            color: $blue;
+        }
+    }
+}
+
+
+.height-auto {
+    height: auto !important;
+    overflow-x: auto !important;
+}
+
+.rich-outter {
+    overflow-x: auto !important;
+}
+
+.toggle-view {
+    text-align: center;
+    color: $gray;
+    width: rem(100px);
+    margin: 0 auto;
+    padding: rem(10px) rem(10px) rem(2px) rem(10px);
+}
+
+.attach, .summary-attach {
+    .componentAttachItem {
+        &:last-child {
+            @include border-1px(bottom, #e1e4e6);
+        }
+    }
+}
+
+.load-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: rem(30px);
+    height: rem(50px);
+    font-size: rem(14px);
+    line-height: rem(50px);
+    color: $blue;
+
+    i {
+        margin-left: rem(4px);
+    }
+}
+
+/* 详情页的附件公共样式 */
+.componentAttaches {}
+
+.componentAttachLine {
+    margin-left: 0;
+    @include border-1px(top, #e1e4e6);
+}

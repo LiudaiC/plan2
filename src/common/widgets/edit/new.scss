@@ -1,0 +1,224 @@
+@import '../../css/global';
+@import '../../css/ui';
+@import '../../css/rich.scss';
+
+.alert-length-limit, .alert-submit-after {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: $white;
+    font-size: rem(16px);
+    border-radius: rem(4px);
+}
+
+.alert-length-limit {
+    height: rem(90px);
+    line-height: rem(90px);
+    width: rem(210px);
+    text-align: center;
+}
+
+.alert-submit-after {
+    width: rem(170px);
+    height: rem(110px);
+    text-align: center;
+
+    .submit-icon {
+        margin-bottom: rem(12px);
+        margin-top: rem(17px);
+    }
+}
+
+.edit-container {
+    font-size: rem(14px);
+    box-sizing: border-box;
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .input {
+        border: none;
+        background-color: $white;
+        outline: none;
+        font-size: rem(14px);
+        resize: none;
+    }
+}
+
+.edit-title-wrap,
+.edit-content-wrap {
+    position: relative;
+    @include border-1px(bottom);
+    margin-top: rem(10px);
+    background-color: $white;
+    overflow: hidden;
+    .content-wrap, .title-wrap {
+        overflow: hidden;
+    }
+}
+
+
+.edit-container {
+
+    .title-wrap {
+        height: rem(80px);
+
+        .title-close {
+            top: rem(16px);
+        }
+        
+        .title-wrap {
+            height: rem(50px);
+
+            .phone-input {
+
+                &-placeholder {
+                    left: rem(17px);
+                }
+            }
+        }
+    }
+}
+
+
+.edit-content-wrap {
+
+    .edit-words {
+        @include border-1px(bottom, #e3e4e5);
+
+        height: rem(180px);
+        font-size: rem(14px);
+        position: relative;
+    }
+    
+    .content-wrap {
+        height: 100%;
+
+        &.phone-input {
+            margin-top: 0;
+        }
+    }
+}
+
+.edit-option {
+    @include border-1px(bottom);
+    padding-left: rem(15px);
+    background-color: $white;
+    margin-top: rem(10px);
+
+    .edit-item {
+        height: rem(44px);
+        line-height: rem(42px);
+        font-size: rem(14px);
+        padding-right: rem(15px);
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        &:first-child {
+            @include border-1px(bottom, #e3e4e5);
+        }
+
+        .title {
+            color: #666;
+        }
+
+        .item-content {
+            flex: 1;
+            overflow: hidden;
+
+            .value {
+                display: block;
+                color: $black;
+                font-size: rem(14px);
+                margin-right: rem(12px);
+                margin-left: rem(10px);
+                @include ellipsis(1);
+                text-align: right;
+            }
+        }
+    }
+}
+
+.componentAttachItem {
+    &:not(:last-child) {
+        @include border-1px(bottom, #e1e4e6);
+    }
+
+    &:last-child {
+        @include border-1px(bottom, #e1e4e6);
+    }
+
+    .componentAttachContent {
+        margin-left: 0;
+    }
+}
+
+.edit-container .phone-input {
+
+    &-limit {
+        font-size: rem(12px);
+        color: #FA575D;
+        right: 0;
+        bottom: rem(-2px);
+        padding: 0 rem(10px);
+        background: transparent;
+    }
+
+    &-delete {
+        @extend .close-x;
+    }
+}
+
+.mbsc-android-holo-light .dwbc {
+    border: none;
+    @include border-1px(top, #d9d9d9);
+}
+
+.mbsc-android-holo {
+
+    .dwb {
+        height: rem(50px);
+        line-height: rem(50px);
+    }
+
+    .dwbw:first-child .dwb {
+        @include border-1px(right, #d9d9d9);
+    }
+
+    .dwwol {
+        width: 100%;
+        left: 0;
+    }
+
+    .dwhl {
+        padding-left: rem(22px);
+        padding-right: rem(22px);
+    }
+}
+
+.edit-attach {
+    padding-left: 10px;
+
+    .edit-add-attach {
+        min-height: rem(50px);
+        line-height: rem(48px);
+        color: #797c80;
+        font-size: rem(14px);
+        display: flex;
+        align-items: center;
+        
+        > i {
+            display: block;
+            margin-top: rem(-2px);
+            margin-right: rem(6px);
+        }
+    }
+}
+
+.phone-input {
+    @include border-1px(bottom);
+}

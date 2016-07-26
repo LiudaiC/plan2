@@ -1,0 +1,220 @@
+@import '../../css/global';
+
+// 兼容IOS fixed 去除该元素
+// #goalui-fixedinput-shadow {
+//     position: absolute;
+//     z-index: 98;
+//     top: 0;
+//     left: 0;
+//     margin: 0;
+//     width: 100%;
+//     height: 100%;
+//     background: rgba(255, 255, 255, 0.1);
+//     color: #fff;
+//     font-size: 14px;
+//     text-align: center;
+//     word-break: break-all;
+//     overflow: hidden;
+//     transform: translate3d(0, 0, 0);
+//     display: block;
+// }
+
+// 兼容ios fixed后为了能滚动
+// .scroller {
+//     // height: 100%;
+//     left: 0;
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     width: 100%;
+//     z-index: 1;
+//     -weblit-overflow-scrolling: touch;
+// }
+
+/*固定输入框*/
+.goalui-fixedinput {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // z-index: 99;
+    padding: 6px 12px;
+    background: #e8e8e8;
+
+    &.extend {
+        padding: 10px 10px 0;
+
+        .input-out {
+            margin: 0;
+            @include border-1px(bottom, #d4d7d9);
+
+            .placeholder {
+                top: 15px;
+                left: 12px;
+            }
+        }
+
+        .editable-out {
+            height: 110px;
+            border-radius: 4px;
+            padding: 15px 10px 10px;
+            // overflow: hidden;
+        }
+
+        .editable {
+            padding: 0;
+            height: 100%;
+            overflow: auto;
+            white-space: normal;
+        }
+
+        .limit {
+            right: 60px;
+            top: 138px;
+            bottom: initial;
+        }
+
+        .button {
+            bottom: -10px;
+            height: 72px;
+            width: 72px;
+            background-color: rgba(255, 255, 255, 0);
+            right: -10px;
+        }
+
+        .button-wrap {
+            position: relative;
+            top: 0;
+            height: 50px;
+            text-align: right;
+            width: auto;
+
+            .send {
+                display: initial;
+
+                // &.no-words + .cancel-text {
+                //     display: none;
+                // }
+            }
+
+            // .cancel-text {
+            //     top: -110px;
+            //     display: initial;
+            // }
+        }
+    }
+
+    .input-out {
+        margin: 0 40px 0 0;
+        position: relative;
+    }
+
+    .editable-out {
+        width: 100%;
+        padding: 0 8px;
+        border-radius: 3px;
+        background: #fff;
+        box-sizing: border-box;
+        // overflow: hidden;
+    }
+
+    .editable {
+        border: none;
+        display: block;
+        width: 100%;
+        height: 20px;
+        white-space: nowrap;
+        line-height: 18px;
+        padding: 6px 20px 6px 0;
+        font-size: 15px;
+        -webkit-user-select: text;
+        user-select: text;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        resize: none;
+    }
+
+    .input-out {
+
+        .placeholder {
+            position: absolute;
+            top: 6px;
+            left: 8px;
+            font-size: 15px;
+            color: #999;
+        }
+    }
+
+    .limit {
+        position: absolute;
+        right: 0;
+        bottom: 38px;
+        width: 50px;
+        line-height: 16px;
+        padding-left: 10px;
+        font-size: 14px;
+        color: #fe0000;
+        box-sizing: border-box;
+    }
+
+    .editable-out {
+        position: relative;
+    }
+
+    .button {
+        position: absolute;
+        right: -47px;
+        width: 32px;
+        height: 32px;
+        margin: 0 0 0 6px;
+        background: #fff url(icon_enclosure.png) center center no-repeat;
+        background-size: 19px 19px;
+        border-radius: 50%;
+        bottom: 0;
+    }
+
+    /*发送按钮*/
+    .button-wrap {
+        position: absolute;
+        right: 0;
+        top: 6px;
+        width: 50px;
+
+        .send {
+            width: 60px;
+            height: 30px;
+            border-radius: 4px;
+            background-color: #29e;
+            color: #fff;
+            float: right;
+            margin-top: 10px;
+            text-align: center;
+            padding-left: 0;
+            line-height: 30px;
+            font-size: 16px;
+            display: none;
+        }
+
+        // .cancel-text {
+        //     position: absolute;
+        //     right: 5px;
+        //     display: none;
+        // }
+    }
+
+    .button-wrap {
+
+        span {
+            display: block;
+        }
+
+        .send:active {
+            color: #4bf;
+        }
+
+        .send.unable, .send.unable:active {
+            color: #aaa;
+            background-color: #fcfcfc;
+        }
+    }
+}

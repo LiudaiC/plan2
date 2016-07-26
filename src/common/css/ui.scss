@@ -1,0 +1,341 @@
+/**
+ * @file ui.scss
+ * @author deo
+ *
+ * ui
+ */
+
+/**
+ * 附件添加
+ *
+ */
+$add-attach-width: rem(18px);
+
+.add-attach {
+    padding: 0;
+    display: inline-block;
+    width: $add-attach-width;
+    height: $add-attach-width;
+    background-image: url('../img/button_import_add-accessory.png');
+    background-repeat: no-repeat;
+    background-size: $add-attach-width;
+}
+
+/**
+ * 附件加载更多
+ *
+ */
+$more-attach-size: rem(8px);
+
+.more-attach {
+    padding: 0;
+    display: inline-block;
+    width: $more-attach-size;
+    height: $more-attach-size;
+    background-image: url('../img/more.png');
+    background-repeat: no-repeat;
+    background-size: $more-attach-size;
+}
+
+/**
+ * 文本清除
+ *
+ */
+$add-attach-width: rem(18px);
+
+.close-x {
+    padding: 0;
+    display: block;
+    position: absolute;
+    top: rem(10px);
+    right: rem(10px);
+    width: $add-attach-width;
+    height: $add-attach-width;
+    background-image: url('../img/button_top_search_close.png');
+    background-repeat: no-repeat;
+    background-size: $add-attach-width;
+}
+
+/**
+ * 右箭头
+ *
+ */
+$arrow-width-size: rem(9px);
+$arrow-height-size: rem(14px);
+
+.arrow-right {
+    display: inline-block;
+    padding: 0;
+    width: $arrow-width-size;
+    height: $arrow-height-size;
+    background-image: url('../img/icon_list_to-right-arrow.png');
+    background-repeat: no-repeat;
+    background-size: $arrow-width-size $arrow-height-size;
+}
+
+/**
+ * 勾
+ *
+ */
+$hook-width-size: rem(16px);
+$hook-height-size: rem(12px);
+
+.hook {
+    display: inline-block;
+    padding: 0;
+    width: $hook-width-size;
+    height: $hook-height-size;
+    background-image: url('../img/icon_tab_sure.png');
+    background-repeat: no-repeat;
+    background-size: $hook-width-size $hook-height-size;
+}
+
+/**
+ * 勾和x
+ *
+ *
+ */
+$circle-size: rem(45px);
+.circle-right, .circle-err {
+    display: inline-block;
+    padding: 0;
+    width: $circle-size;
+    height: $circle-size;
+    background-repeat: no-repeat;
+    background-size: $circle-size;
+}
+
+.circle-right {
+    background-image: url('../img/popup_right.png');
+}
+
+.circle-err {
+    background-image: url('../img/popup_error.png');
+}
+
+/**
+ * 搜索图标
+ *
+ */
+$search-size: rem(14px);
+.icon-search {
+    display: inline-block;
+    padding: 0;
+    width: $search-size;
+    height: $search-size;
+    background-image: url('../img/icon_top_search.png');
+    background-repeat: no-repeat;
+    background-size: $search-size;
+}
+
+/**
+ * 大搜索图标
+ *
+ */
+$search-big-size: rem(73px);
+.icon-search-big {
+    display: inline-block;
+    padding: 0;
+    width: $search-big-size;
+    height: $search-big-size;
+    background-image: url('../img/icon_middle_empty_serch.png');
+    background-repeat: no-repeat;
+    background-size: $search-big-size;
+}
+
+/**
+ * 网络故障图标
+ *
+ */
+$net-err-width-size: rem(79px);
+$net-err-height-size: rem(69px);
+
+.icon-net-err {
+    display: inline-block;
+    padding: 0;
+    width: $net-err-width-size;
+    height: $net-err-height-size;
+    background-image: url('../img/icon_middle_empty_no-network.png');
+    background-repeat: no-repeat;
+    background-size: $net-err-width-size $net-err-height-size;
+}
+
+/**
+ * 旗帜图标
+ *
+ */
+$flag-width-size: rem(75px);
+$flag-height-size: rem(71px);
+
+.icon-flag {
+    display: inline-block;
+    padding: 0;
+    width: $flag-width-size;
+    height: $flag-height-size;
+    background-image: url('../img/icon_middle_empty_task.png');
+    background-repeat: no-repeat;
+    background-size: $flag-width-size $flag-height-size;
+}
+
+/**
+ * 旗帜图标
+ *
+ */
+$flag-null-size: rem(70px);
+
+.icon-flag-null {
+    display: inline-block;
+    padding: 0;
+    width: $flag-null-size;
+    height: $flag-null-size;
+    background-image: url('../img/list_null.png');
+    background-repeat: no-repeat;
+    background-size: $flag-null-size;
+}
+
+/**
+ * 五角星
+ */
+$star-size: rem(16px);
+.star {
+    padding: 0;
+    display: inline-block;
+    width: $star-size;
+    height: $star-size;
+    background: url('../img/star.png') no-repeat ($star-size * -1) 0;
+    background-size: $star-size * 2;
+
+    &.follow {
+        background-position: 0 0;
+    }
+}
+
+/**
+ * 计数器
+ */
+.count {
+    min-width: rem(12px);
+    height: rem(12px);
+    line-height: rem(12px);
+    display: inline-block;
+    padding: rem(2px);
+    text-align: center;
+    background: $red;
+    border-radius: 10px;
+    color: $white !important;
+    font-size: rem(12px);
+}
+
+/**
+ * Loading
+ */
+$loading-size: 20px;
+
+.loading {
+    /* @include loading($loading-size, 2px, $body-bg); */
+}
+
+.loading-status {
+    display: flex;
+    justify-content: center;
+
+    .loading, .loading-text {
+        display: inline-flex;
+    }
+
+    .loading-text {
+        height: $loading-size;
+        line-height: $loading-size;
+        padding-left: rem(10px);
+        font-size: rem(12px);
+        color: $color-tips;
+    }
+}
+
+/**
+ * layout list 重写一些 loading 样式
+ */
+.layout-list {
+
+    .layout-loading {
+        @include border-1px(top);
+
+        padding: rem(12px) 0;
+
+        .loading {
+            /* @include loading($loading-size, 2px); */
+        }
+    }
+}
+
+/*  */
+.status {
+    color: $blue;
+}
+
+.errline {
+    color: $light-gray;
+}
+
+.time {
+    font-size: rem(11px);
+    color: $light-gray;
+}
+
+/* icon */
+.icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    &-point {
+        width: 5px;
+        height: 5px;
+        background: $drak-red;
+        border-radius: 100%;
+    }
+
+    &-new {
+        @include icon-corner($drak-red);
+    }
+
+    &-delay {
+        @include icon-corner(#999);
+    }
+}
+
+/* TAB */
+.tab {
+    display: box;
+    box-pack: center;
+    box-align: center;
+    height: rem(35px);
+    background: $white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    overflow: hidden;
+    @include border-1px(bottom);
+
+    ul {
+        position: absolute;
+        height: rem(35px);
+        background: $white;
+
+        li {
+            font-size: rem(14px);
+            display: inline-block;
+            height: rem(15px);
+            line-height: rem(15px);
+            padding: rem(10px) rem(20px);
+            color: $black;
+
+            &.selected {
+                color: $blue;
+
+                @include border-1px(bottom, $blue, 2px);
+            }
+        }
+    }
+}

@@ -1,0 +1,85 @@
+/**
+ * @file layout.scss
+ * @author deo
+ *
+ * 布局相关
+ *
+ */
+
+.layout {
+    margin-top: rem(10px);
+    padding: rem(20px) rem(15px) rem(15px) rem(15px);
+    background: $white;
+}
+
+// layout-list, layout-list-only
+.layout-common {
+    background: $white;
+    
+    dd {
+        height: rem(20px);
+        line-height: rem(20px);
+        padding: rem(13px) 0 rem(11px) 0;
+
+        @include clearfix();
+
+        div {
+            height: 100%;
+        }
+
+        .column-left {}
+
+        .column-middle {}
+
+        .column-right {
+            position: relative;
+        }
+    }
+}
+
+// 有 title 样式
+.layout-list {
+    @extend .layout-common;
+    margin-top: rem(10px);
+    padding: rem(15px) 0 0 rem(15px);
+
+    dd {}
+}
+
+// 无 title 样式
+.layout-list-only {
+    @extend .layout-common;
+    padding: 0 0 0 rem(15px);
+
+    dd:not(:first-child) {
+        @include border-1px(top, #e1e4e6);
+    }
+}
+
+.box-center {
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    display: -moz-box;
+    -moz-box-orient: horizontal;
+    -moz-box-pack: center;
+    -moz-box-align: center;
+    display: -o-box;
+    -o-box-orient: horizontal;
+    -o-box-pack: center;
+    -o-box-align: center;
+    display: -ms-box;
+    -ms-box-orient: horizontal;
+    -ms-box-pack: center;
+    -ms-box-align: center;
+    display: box;
+    box-orient: horizontal;
+    box-pack: center;
+    box-align: center;
+}
+
+/* 强制换行 */
+.word-content {
+    word-wrap: break-word;
+}

@@ -1,0 +1,47 @@
+/**
+ * @file dataLoader.scss
+ * @author deo
+ *
+ * 基础样式
+ */
+
+.hide {
+    display: none;
+}
+
+/* 加载更多 */
+.data-more {
+    height: 20px;
+    line-height: 20px;
+    padding: 10px 0;
+    color: #a0a0a0;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* 重载 */
+.data-reload {
+    position: absolute;
+    height: 30px;
+    margin-top: -40px;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #a0a0a0;
+
+    > div {
+        height: 20px;
+        line-height: 20px;
+        padding: 10px 0 0 0;
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+    }
+}
+
+/* 占位 */
+.data-reload-place {
+    position: relative;
+    margin-top: 0;
+}

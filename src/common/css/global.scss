@@ -1,0 +1,188 @@
+/**
+ * @file global.scss
+ * @author deo
+ *
+ * 通用样式
+ *
+ */
+
+@charset "utf-8";
+
+@import "vars.scss";
+@import "fn.scss";
+
+* {
+    outline: none;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+img {
+    border: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-style: normal;
+    font-weight: normal;
+}
+
+ol, ul {
+    list-style:none;
+}
+
+caption, th {
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+html {
+    font-size: $browser-default-font-size;
+}
+
+body {
+    background-color: $body-bg;
+    font-size: rem(14px);
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    user-select: none;
+}
+
+b {
+    font-weight: normal;
+}
+
+em {
+    font-style: normal;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none !important;
+}
+
+em, b, span, i, input, label, a, img {
+    display: inline-flex;
+}
+
+.state-doing {
+    color: $state-doing;
+}
+
+input, button, select, textarea {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
+}
+
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+
+/**
+ * webkit contenteditable 可编辑
+ */
+div[contenteditable], div[contenteditable] * {
+    -webkit-user-select: text !important;
+}
+
+@media only screen and (min-width: 481px){
+    html {
+        font-size: 94% !important;
+    }
+}
+@media only screen and (min-width: 561px){
+    html {
+        font-size: 109% !important;
+    }
+}
+@media only screen and (min-width: 641px){
+    html {
+        font-size: 125% !important;
+    }
+}
+
+@import "layout.scss";
+
+
+/**
+ * 公共错误弹框
+ */
+@keyframes hideAnimate {
+    from {
+        opacity: 1;
+        transform: translate3d(0%, 0px, 0px);
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(0%, -60px, 0px);
+    }
+}
+
+@keyframes showAnimate {
+    from {
+        opacity: 0;
+        transform: translate3d(0%, 60px, 0px);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0%, 0px, 0px);
+    }
+}
+
+$cubic: cubic-bezier(0.42, 0, 0.58, 1.0);
+
+.ialert-outter {
+    @extend .box-center;
+
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+
+    &.ialert-show-animate {
+        animation: showAnimate 0.3s $cubic;
+        animation-fill-mode: forwards;
+    }
+
+    &.ialert-hide-animate {
+        animation: hideAnimate 0.3s $cubic;
+        animation-fill-mode: forwards;
+    }
+
+    .ialert-inner {
+        @extend .box-center;
+
+        min-width: 100px;
+        min-height: 40px;
+        padding: rem(20px);
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: rem(4px);
+        text-align: center;
+        color: $white;
+    }
+}

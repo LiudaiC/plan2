@@ -1,0 +1,80 @@
+{
+    "meta": {
+        "code": 200,
+        "message": "请求成功"
+    },
+    "data": {
+        "rights": {
+            "seeRight": true,
+            "editRight": true,
+            "commentRight": true,
+            "recoverRight": false,
+            "doneRight": true
+        },
+        "id": 69371,
+        "importanceLevel": 4,
+        "status": 4,
+        "taskId": 69610,
+        "labelId": 1,
+        "createUser": 130120,
+        "lastUpUser": 130120,
+        "opTime": 1466488503498,
+        "cid": 2,
+        "title": "福娃",
+        "content": "",
+        "createTime": 1466488503498,
+        "taskTagName": "待办sdfsssss",
+        "taskTitle": "第二个任务",
+        "attachs": [
+            {
+                "id": 70342,
+                "raid": "RA10B1_70342",
+                "size": 1133883,
+                "fileName": "photo 2016-06-23 13:51:38 472.jpg",
+                "previewUrl": "http://web.test1.com/webcd/common/attach/preview/mobilePreview.jsp?id=RA10_70342&uid=1091&cid=10&token=3f202441-d24a-4f06-99da-db3860f5d53b-231350&client=mip",
+                "downloadUrl": "RA10B1_70342"
+            },
+            {
+                "id": 70342,
+                "raid": "RA10B1_70342",
+                "size": 1133883,
+                "fileName": "photo 2016-06-23 13:51:38 472.jpg",
+                "previewUrl": "http://web.test1.com/webcd/common/attach/preview/mobilePreview.jsp?id=RA10_70342&uid=1091&cid=10&token=3f202441-d24a-4f06-99da-db3860f5d53b-231350&client=mip",
+                "downloadUrl": "RA10B1_70342"
+            },
+            {
+                "id": 70342,
+                "raid": "RA10B1_70342",
+                "size": 1133883,
+                "fileName": "photo 2016-06-23 13:51:38 472.jpg",
+                "previewUrl": "http://web.test1.com/webcd/common/attach/preview/mobilePreview.jsp?id=RA10_70342&uid=1091&cid=10&token=3f202441-d24a-4f06-99da-db3860f5d53b-231350&client=mip",
+                "downloadUrl": "RA10B1_70342"
+            },
+            {
+                "id": 70342,
+                "raid": "RA10B1_70342",
+                "size": 1133883,
+                "fileName": "photo 2016-06-23 13:51:38 472.jpg",
+                "previewUrl": "http://web.test1.com/webcd/common/attach/preview/mobilePreview.jsp?id=RA10_70342&uid=1091&cid=10&token=3f202441-d24a-4f06-99da-db3860f5d53b-231350&client=mip",
+                "downloadUrl": "RA10B1_70342"
+            },
+            {
+                "id": 70342,
+                "raid": "RA10B1_70342",
+                "size": 1133883,
+                "fileName": "photo 2016-06-23 13:51:38 472.jpg",
+                "previewUrl": "http://web.test1.com/webcd/common/attach/preview/mobilePreview.jsp?id=RA10_70342&uid=1091&cid=10&token=3f202441-d24a-4f06-99da-db3860f5d53b-231350&client=mip",
+                "downloadUrl": "RA10B1_70342"
+            },
+            {
+                "id": 70342,
+                "raid": "RA10B1_70342",
+                "size": 1133883,
+                "fileName": "photo 2016-06-23 13:51:38 472.jpg",
+                "previewUrl": "http://web.test1.com/webcd/common/attach/preview/mobilePreview.jsp?id=RA10_70342&uid=1091&cid=10&token=3f202441-d24a-4f06-99da-db3860f5d53b-231350&client=mip",
+                "downloadUrl": "RA10B1_70342"
+            }
+        ],
+        "attention": 0
+    }
+}

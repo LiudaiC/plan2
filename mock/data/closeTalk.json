@@ -1,0 +1,16 @@
+{
+    "meta" : {
+        "code" : 200,
+        "message" : "请求成功"
+    },
+    "data" : {
+        "rights": {
+            "seeRight": false,
+            "summarizeRight": false,
+            "editRight": false,
+            "resumeRight": false,
+            "closeRight": false,
+            "commentRight": false
+        }
+    }
+}
