@@ -1,0 +1,122 @@
+@import "../common/css/global.scss";
+
+$week-new: #ffb910;
+$month-new: #d69855;
+$custom-new: #ea8056;
+
+$plan-card-color: #4c9dfc;
+
+$border-radius: rem(4px);
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.main {
+    height: 100%;
+    overflow: hidden;
+}
+
+.wrapper {
+	margin: rem(10px) rem(10px) 0;
+}
+
+.new-button-box {
+	display: flex;
+
+	.new-button {
+		position: relative;
+		flex: 1;
+		text-align: center;
+		margin-right: rem(10px);
+
+		height: rem(120px);
+		border-radius: $border-radius;
+		color: $white;
+		
+		$new-img-size: rem(38px);
+
+		&:before {
+            position: absolute;
+            display: block;
+            content: ' ';
+            width: $new-img-size;
+            height: rem(5px);
+            background: $white;
+            margin: 0 auto;
+            margin-top: rem(-17px) !important; // 初步怀疑是 webpack loader 把权重顺序输出反了
+            margin-left: $new-img-size * -.5 !important;
+            top: 50%;
+            left: 50%;
+            border-radius: 50px;
+        }
+
+        &:after {
+            position: absolute;
+            display: block;
+            content: ' ';
+            width: rem(5px);
+            height: $new-img-size;
+            background: $white;
+            margin: 0 auto;
+            margin-top: rem(-33px);
+            margin-left: rem(-2px);
+            top: 50%;
+            left: 50%;
+            border-radius: 50px;
+        }
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&.week-plan-button {
+			background-color: $week-new;
+		}
+
+		&.month-plan-button {
+			background-color: $month-new;
+		}
+
+		&.custom-plan-button {
+			background-color: $custom-new;
+		}
+
+		.words {
+			margin-top: rem(83px);
+		}
+	}
+}
+
+.bottom-wrapper {
+	margin-top: rem(10px);
+
+	.plan-card {
+		border-radius: $border-radius;
+		background-color: $plan-card-color;
+		height: rem(140px);
+
+		.plan-words {
+			float: right;
+			margin-right: rem(16px);
+			margin-top: rem(52px);
+			text-align: right;
+
+			.plan-words-title {
+				font-size: rem(22px);
+				color: $white;
+			}
+
+			.new-add {
+				font-size: rem(14px);
+				color: #9ac8ff;
+				margin-top: rem(8px);
+			}
+		}
+
+		&:last-child {
+			margin-top: rem(10px);
+		}
+	}
+}

@@ -10,7 +10,7 @@ var util = require('./util');
 var storage = require('./localstorage');
 var Control = require('./control');
 var lang = require('./lang');
-var log = require('./log');
+// var log = require('./log');
 var md5 = require('dep/md5');
 
 var ajaxError = require('./ui/ajaxError');
@@ -332,11 +332,11 @@ Page.prototype.failed = function (errObj) {
     // 掉线不发送错误 log
     if (err.code !== 1) {
         /* eslint-disable */
-        log.send({
-            'da_src': 'err: ' + err.msg + ' url: ' + window.location.href
-                + ' pageLog: ' + util.qs.stringify(window.pageLog),
-            'da_act': 'error'
-        });
+        // log.send({
+        //     'da_src': 'err: ' + err.msg + ' url: ' + window.location.href
+        //         + ' pageLog: ' + util.qs.stringify(window.pageLog),
+        //     'da_act': 'error'
+        // });
         /* eslint-enable */
     }
 
@@ -355,10 +355,10 @@ Page.prototype.error = function () {};
 Page.prototype.done = function () {
     this.isDone = true;
 
-    log.init();
+    // log.init();
 
     // 把 log 的相关操作放到 page 上
-    this.log = log;
+    // this.log = log;
 };
 
 /**

@@ -10,78 +10,8 @@ var config = {
     debug: false,
 
     API: {
-        // 用于发送异步请求
-        // host: document.location.protocol + '//mg.jingoal.com',
         host: '',
-
-        prefix: '/mgw/task/v1/',
-
-        HOME_URL: 'getHomeRemind',
-        DOCK_REMIND: 'getDockRemind',
-
-        // 任务详情
-        TASK_DETAIL_URL: 'getTaskDetail',
-        // 任务附件列表
-        ATTACH_LIST: 'getDocumentList',
-        // 添加关注
-        TASK_FOLLOW: 'attentionTask',
-        // 任务新建
-        TASK_NEW_URL: 'createTask',
-        // 任务编辑
-        TASK_EDIT_URL: 'updateTask',
-        // 接收任务
-        TASK_RECEIVE: 'receiveTask',
-        // 恢复任务
-        TASK_RECOVER: 'recoverTask',
-        // 总结详情
-        TASK_SUMMARY_GET: 'getTaskSummary',
-        // 任务完成
-        COMPLETE_TASK: 'completeTask',
-        // 任务撤销
-        REVOKE_TASK: 'revokeTask',
-        // 任务拒绝
-        REFUSE_TASE: 'refuseTask',
-        // 任务同意
-        AUDIT_TASK: 'auditTask',
-
-        // 事件详情
-        AFFAIR_DETAIL_URL: 'getAffairDetail',
-        AFFAIR_DONE: 'finishAffair',
-        AFFAIR_RESUME: 'recoveryAffair',
-        AFFAIR_COMMENT_DELETE: 'deleteAffairComment',
-        AFFAIR_COMMENT_ADD: 'addAffairComment',
-        // 加载更多事件和讨论
-        AFFAIR_TALK_MORE_URL: 'getTaskSlaves',
-        // 事件新建
-        AFFAIR_NEW_URL: 'createAffair',
-        // 事件编辑
-        AFFAIR_EDIT_URL: 'updateAffair',
-        // 事件评论列表
-        AFFAIR_COMMENT_LIST: 'getAffairCommentList',
-        GET_AFFAIR_TAGS: 'getAffairTags',
-
-        // 讨论编辑
-        TALK_EDIT_URL: 'updateTalk',
-        // 讨论
-        TALK_DETAIL_URL: 'getTalkDetail',
-        // 讨论新建
-        TALK_NEW_URL: 'createTalk',
-        TALK_DONE: 'closeTalk',
-        TALK_RESUME: 'resumeTalk',
-        TALK_COMMENT_DELETE: 'deleteTalkComment',
-        TALK_COMMENT_ADD: 'addTalkComment',
-        // 讨论评论列表
-        TALK_COMMENT_LIST: 'getTalkCommentList',
-        // 总结详情
-        TALK_SUMMARY_GET: 'getTalkSummary',
-        TALK_SUMMARY: 'summaryTalk',
-
-        // 列表
-        // 任务列表
-        GET_TASK_LIST: 'getTaskList',
-        GET_TALK_LIST: 'getTalkList',
-        GET_AFFAIR_LIST: 'getAffairList',
-        SEARCH_TASK: 'searchTask'
+        MY_PLAN_LIST: 'myPlanList'
     }
 };
 
@@ -100,10 +30,10 @@ config.API.ATTACH_RESUMEURL = config.API.host + '/mgw/common/attachment/getFSTok
 config.const = {
 
     // localstorage 公用参数
-    PARAMS: 'TASK_PARAMS',
+    PARAMS: 'PLAN_PARAMS',
 
     // local database
-    DATABASE_NAME: 'TASK_DATABASE'
+    DATABASE_NAME: 'PLAN_DATABASE'
 };
 
 // 以下参数 febd.config.js & page.js 使用
@@ -125,7 +55,7 @@ config.mock = {
 // 如果 mock.proxyPrefix 和 API.prefix 指向同一个 路由，则代表需要进行转发
 // prefix = '/data/' 为前端本地开发调试使用
 
-// config.debug = true;
+config.debug = true;
 
 if (config.debug) {
     var loc = window.location;
