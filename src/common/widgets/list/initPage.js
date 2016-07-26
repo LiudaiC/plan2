@@ -10,6 +10,7 @@ var config = require('../../../config');
 var DataLoader = require('common/ui/dataLoader/dataLoader');
 
 function Init(options) {
+
     var me = this;
 
     me.opts = {
@@ -33,7 +34,7 @@ function Init(options) {
         dataKey: 'objList',
 
         tpl: null
-    }
+    };
 }
 
 
