@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+    <title></title>
+</head>
+<body>
+	<div id="main">
+		<div class="wrapper">
+			<div class="new-button-box">
+				<div class="new-button week-plan-button touch-button">
+					<div><span class="words" data-lang="weekPlan"></span></div>
+				</div>
+				<div class="new-button month-plan-button touch-button">
+					<div><span class="words" data-lang="monthPlan"></span></div>
+				</div>
+				<div class="new-button custom-plan-button touch-button">
+					<div><span class="words" data-lang="customPlan"></span></div>
+				</div>
+			</div>
+			<div id="bottom-wrapper" class="bottom-wrapper"></div>
+		</div>
+	</div>
+	<script id="bottom-wrapper-tmpl" type="x-tmpl-mustache">
+		<div class="plan-card touch-button">
+			<div class="plan-words">
+				<div class="plan-words-title">{{ lang.myPlan }}</div>
+				<div class="new-add">{{ lang.newAddRate }}</div>
+			</div>
+		</div>
+		<div class="plan-card touch-button">
+			<div class="plan-words">
+				<div class="plan-words-title">{{ lang.ratePlan }}</div>
+				<div class="new-add">{{ lang.newAddPlan }}</div>
+			</div>
+		</div>
+	</script>
+	<script type="text/javascript" src="./cordova.js"></script>
+</body>
+</html>

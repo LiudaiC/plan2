@@ -34,6 +34,9 @@ var CPNavigationBar = {
     },
     setGoBackHandler: function () {
 
+    },
+    setTitle: function () {
+        
     }
 };
 

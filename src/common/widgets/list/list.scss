@@ -1,0 +1,9 @@
+@import "../../css/global.scss";
+
+$border-color: #dedfe0;
+
+.list-item {
+	height: rem(75px);
+	background-color: $white;
+	@include border-1px(bottom, $border-color);
+}
