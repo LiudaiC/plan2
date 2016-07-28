@@ -7,11 +7,12 @@ var config = {
 
     VERSION: '1',
 
-    debug: false,
+    debug: true,
 
     API: {
         host: '',
-        MY_PLAN_LIST: 'myPlanList'
+        MY_PLAN_LIST: 'myPlanList',
+        PLAN_NEW: 'new'
     }
 };
 
@@ -54,8 +55,6 @@ config.mock = {
 // debug 模式
 // 如果 mock.proxyPrefix 和 API.prefix 指向同一个 路由，则代表需要进行转发
 // prefix = '/data/' 为前端本地开发调试使用
-
-config.debug = true;
 
 if (config.debug) {
     var loc = window.location;
