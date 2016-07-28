@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+    <title></title>
+</head>
+<body>
+	<div id="main" class="main">
+		<div class="wrapper">
+			<div id="plan-options" class="plan-options"></div>
+			<div id="plan-content" class="plan-content">
+				<div class="plan-content-inner">
+					<div class="plan-content-section">
+						<div class="section-inner">
+							<div class="section-title"></div>
+							<div class="section-content">
+								<div class="section-content-main">
+									<div class="status-btn">i</div>
+									<div class="input-main phone-input">
+										<div class="editable phone-input-main" contenteditable="plaintext-only" data-placeholder="计划细则"></div>
+									</div>
+								</div>
+								<div class="add-main">
+									添加细则
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script id="plan-options-tmpl" type="x-tmpl-mustache">
+		<div class="options-inner">
+			<div class="option">
+				<div class="title">{{ lang.planType }}</div>
+				<div class="value">{{ type }}</div>
+			</div>
+			<div class="option">
+				<div class="title">{{ lang.planTime }}</div>
+				<div class="value placeholder">{{ time }}</div>
+			</div>
+			<div class="option plan-title">
+				<div class="title">{{ lang.planTitle }}</div>
+				<input class="value input" type="text" value="{{ title }}">
+			</div>
+		</div>
+	</script>
+	<script type="text/javascript" src="./cordova.js"></script>
+</body>
+</html>

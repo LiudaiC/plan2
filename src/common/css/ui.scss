@@ -22,22 +22,6 @@ $add-attach-width: rem(18px);
 }
 
 /**
- * 附件加载更多
- *
- */
-$more-attach-size: rem(8px);
-
-.more-attach {
-    padding: 0;
-    display: inline-block;
-    width: $more-attach-size;
-    height: $more-attach-size;
-    background-image: url('../img/more.png');
-    background-repeat: no-repeat;
-    background-size: $more-attach-size;
-}
-
-/**
  * 文本清除
  *
  */
@@ -46,48 +30,11 @@ $add-attach-width: rem(18px);
 .close-x {
     padding: 0;
     display: block;
-    position: absolute;
-    top: rem(10px);
-    right: rem(10px);
     width: $add-attach-width;
     height: $add-attach-width;
     background-image: url('../img/button_top_search_close.png');
     background-repeat: no-repeat;
     background-size: $add-attach-width;
-}
-
-/**
- * 右箭头
- *
- */
-$arrow-width-size: rem(9px);
-$arrow-height-size: rem(14px);
-
-.arrow-right {
-    display: inline-block;
-    padding: 0;
-    width: $arrow-width-size;
-    height: $arrow-height-size;
-    background-image: url('../img/icon_list_to-right-arrow.png');
-    background-repeat: no-repeat;
-    background-size: $arrow-width-size $arrow-height-size;
-}
-
-/**
- * 勾
- *
- */
-$hook-width-size: rem(16px);
-$hook-height-size: rem(12px);
-
-.hook {
-    display: inline-block;
-    padding: 0;
-    width: $hook-width-size;
-    height: $hook-height-size;
-    background-image: url('../img/icon_tab_sure.png');
-    background-repeat: no-repeat;
-    background-size: $hook-width-size $hook-height-size;
 }
 
 /**
@@ -111,119 +58,6 @@ $circle-size: rem(45px);
 
 .circle-err {
     background-image: url('../img/popup_error.png');
-}
-
-/**
- * 搜索图标
- *
- */
-$search-size: rem(14px);
-.icon-search {
-    display: inline-block;
-    padding: 0;
-    width: $search-size;
-    height: $search-size;
-    background-image: url('../img/icon_top_search.png');
-    background-repeat: no-repeat;
-    background-size: $search-size;
-}
-
-/**
- * 大搜索图标
- *
- */
-$search-big-size: rem(73px);
-.icon-search-big {
-    display: inline-block;
-    padding: 0;
-    width: $search-big-size;
-    height: $search-big-size;
-    background-image: url('../img/icon_middle_empty_serch.png');
-    background-repeat: no-repeat;
-    background-size: $search-big-size;
-}
-
-/**
- * 网络故障图标
- *
- */
-$net-err-width-size: rem(79px);
-$net-err-height-size: rem(69px);
-
-.icon-net-err {
-    display: inline-block;
-    padding: 0;
-    width: $net-err-width-size;
-    height: $net-err-height-size;
-    background-image: url('../img/icon_middle_empty_no-network.png');
-    background-repeat: no-repeat;
-    background-size: $net-err-width-size $net-err-height-size;
-}
-
-/**
- * 旗帜图标
- *
- */
-$flag-width-size: rem(75px);
-$flag-height-size: rem(71px);
-
-.icon-flag {
-    display: inline-block;
-    padding: 0;
-    width: $flag-width-size;
-    height: $flag-height-size;
-    background-image: url('../img/icon_middle_empty_task.png');
-    background-repeat: no-repeat;
-    background-size: $flag-width-size $flag-height-size;
-}
-
-/**
- * 旗帜图标
- *
- */
-$flag-null-size: rem(70px);
-
-.icon-flag-null {
-    display: inline-block;
-    padding: 0;
-    width: $flag-null-size;
-    height: $flag-null-size;
-    background-image: url('../img/list_null.png');
-    background-repeat: no-repeat;
-    background-size: $flag-null-size;
-}
-
-/**
- * 五角星
- */
-$star-size: rem(16px);
-.star {
-    padding: 0;
-    display: inline-block;
-    width: $star-size;
-    height: $star-size;
-    background: url('../img/star.png') no-repeat ($star-size * -1) 0;
-    background-size: $star-size * 2;
-
-    &.follow {
-        background-position: 0 0;
-    }
-}
-
-/**
- * 计数器
- */
-.count {
-    min-width: rem(12px);
-    height: rem(12px);
-    line-height: rem(12px);
-    display: inline-block;
-    padding: rem(2px);
-    text-align: center;
-    background: $red;
-    border-radius: 10px;
-    color: $white !important;
-    font-size: rem(12px);
 }
 
 /**

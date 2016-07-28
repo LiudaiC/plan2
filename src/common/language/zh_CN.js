@@ -16,6 +16,8 @@ module.exports = {
     ratePlan: '评价计划',
     newAddRate: '新增评论',
     newAddPlan: '新增计划',
+    type: '类型',
+    time: '时间',
 
     pullUpLoadMore: '上拉加载更多',
     loading: '加载中',
@@ -26,4 +28,13 @@ module.exports = {
     dropDownRefresh: '下拉刷新',
     releaseRefresh: '释放刷新',
     alreadyLastestData: '已经是最新数据',
+
+    all: '全部',
+    customTime: '自定义时间',
+
+    planType: '计划类型',
+    planTime: '计划时间',
+    planTitle: '计划标题',
+    pleaseChoose: '请选择',
+    mustWrite: '必填'
 };

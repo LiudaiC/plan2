@@ -7,10 +7,19 @@
     <title></title>
 </head>
 <body>
-	<div id="main">
-		<div id="filter"></div>
-		<div id="planList" class="plan-list">
-			<ul id="listUl"></ul>
+	<div id="main" class="main">
+		<div id="filter" class="filter"></div>
+		<div class="slider-container">
+			<div class="scroll-outer">
+				<div class="scroll-inner">
+					<!-- 用于重新加载数据 -->
+		            <div class="data-reload"></div>
+		            <!-- 数据存放容器 -->
+		            <ul id="listUl" class="list-wrapper-content"></ul>
+		            <!-- 用于加载更多数据 -->
+		            <div class="data-more"></div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<script type="text/javascript" src="./cordova.js"></script>

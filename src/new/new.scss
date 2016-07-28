@@ -1,0 +1,181 @@
+@import "../common/css/global.scss";
+@import "../common/css/ui.scss";
+@import "../common/ui/phoneInput/phoneInput.scss";
+
+$placeholder-color: #b1b6bc;
+$tip-light: #fb5555;
+.wrapper {
+	margin-top: rem(15px);
+}
+
+.plan-options {
+	background-color: $white;
+	@include border-1px(bottom, $border-color);
+
+	.options-inner {
+		margin-left: rem(15px);
+		
+		.option {
+			@include border-1px(bottom, $border-color);
+			height: rem(44px);
+			line-height: rem(42px);
+			display: flex;
+			padding-right: rem(15px);
+
+			&:last-child {
+				@include border-1px(bottom, transparent);
+			}
+
+			&.plan-title {
+				position: relative;
+
+				.placeholder, .limits {
+					color: $placeholder-color;
+					position: absolute;
+					right: rem(15px);
+				}
+
+				.placeholder {
+
+					&.light {
+						color: $tip-light;
+					}
+				}
+
+				.limits {
+					right: rem(0px);
+					font-size: rem(12px);
+				}
+			}
+
+			.value {
+				flex: 1;
+				text-align: right;
+
+				&.placeholder {
+					color: $placeholder-color;
+				}
+
+				&.input {
+					border: none;
+					line-height: rem(42px);
+					margin-left: rem(40px);
+					margin-right: rem(25px);
+				}
+			}
+
+			&:not(:last-child) {
+
+				.value {
+					position: relative;
+					padding-right: rem(20px);
+
+					&:after {
+						content: ' ';
+						display: block;
+						position: absolute;
+						right: rem(8px);
+						top: 50%;
+						height: rem(8px);
+						width: rem(8px);
+						border: rem(1px) solid $placeholder-color;
+						border-bottom-color: transparent;
+						border-left-color: transparent;
+						transform: rotate(45deg) translate(0, rem(-8px));
+					}
+				}
+			}
+		}
+	}
+}
+
+.plan-content {
+	margin-top: rem(10px);
+
+
+	.plan-content-section {
+		background-color: $white;
+		@include border-1px(bottom, $border-color);
+
+		.section-inner {
+			margin-left: rem(15px);
+
+			.section-title {
+				height: rem(44px);
+				line-height: rem(42px);
+				@include border-1px(bottom, $border-color);
+			}
+
+			.section-content {
+				margin-left: rem(15px);
+
+				&-main {
+					height: rem(90px);
+					@include border-1px(bottom, $border-color);
+					display: flex;
+					padding-bottom: rem(10px);
+					padding-top: rem(10px);
+
+					.status-btn {
+						width: rem(25px);
+					}
+
+					.input-main {
+						flex: 1;
+						height: 100%;
+
+						.editable {
+							height: 100%;
+							word-break: break-all;
+							overflow: auto;
+						}
+
+						.phone-input-delete {
+							@extend .close-x;
+						}
+					}
+				}
+
+				.add-main {
+					height: rem(44px);
+					line-height: rem(42px);
+					position: relative;
+					color: $blue;
+					padding-left: rem(22px);
+					
+					$new-img-size: rem(12px);
+
+					&:before {
+			            position: absolute;
+			            display: block;
+			            content: ' ';
+			            width: $new-img-size;
+			            height: rem(2px);
+			            background: $blue;
+			            margin: 0 auto;
+			            margin-top: rem(-2px) !important; // 初步怀疑是 webpack loader 把权重顺序输出反了
+			            margin-left: rem(1px) !important;
+			            top: 50%;
+			            left: 0;
+			            border-radius: 50px;
+			        }
+
+			        &:after {
+			            position: absolute;
+			            display: block;
+			            content: ' ';
+			            width: rem(2px);
+			            height: $new-img-size;
+			            background: $blue;
+			            margin: 0 auto;
+			            margin-top: rem(-7px);
+			            margin-left: rem(6px);
+			            top: 50%;
+			            left: 0;
+			            border-radius: 50px;
+			        }
+				}
+			}
+		}
+	}
+}
