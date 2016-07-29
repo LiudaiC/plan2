@@ -1,5 +1,5 @@
 /**
- * 
+ *
  * @file new.js
  * @author hefeng
  *
@@ -10,6 +10,7 @@ require('./new.scss');
 var config = require('../config');
 var Title = require('./input/title');
 var Section = require('./input/section');
+var PhoneInput = require('common/ui/phoneInput/phoneInput');
 var Page = require('common/page');
 var page = new Page();
 
@@ -20,7 +21,16 @@ page.enter = function () {
 
     me.section = new Section({
         wrapper: '#plan-content',
+        data: me.data,
         page: me
+    });
+
+    me.render('#summary', me.data);
+    me.summary = new PhoneInput({
+        'handler': '.summary-input',
+        'input': '.summary-input-editable',
+        'delete': false,
+        'limit': 50
     });
 };
 

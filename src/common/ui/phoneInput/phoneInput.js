@@ -34,9 +34,12 @@ var PhoneInput = function (options) {
     var me = this;
     /* eslint-disable */
     me.opts = {
+        secIndex: 0,
+        inputIndex: 0,
+        wrapper: '',
         handler: '.phone-input',
         input: '.phone-input-main',
-        section: '',
+        inputWrapper: '',
 
         limit: false,
 
@@ -48,10 +51,19 @@ var PhoneInput = function (options) {
             placeholder: '.phone-input-placeholder',
             limit: '.phone-input-limit',
             delete: '.phone-input-delete'
-        }
+        },
+
+        phoneInputs: {}
     };
     /* eslint-enable */
     $.extend(me.opts, options);
+
+    if (me.opts.detail) {
+        me.opts.wrapper += '-' + me.opts.secIndex;
+        me.opts.handler = me.opts.wrapper + ' ' + me.opts.handler + '-' + me.opts.inputIndex;
+        me.opts.input = me.opts.wrapper + ' ' + me.opts.input + '-' + me.opts.inputIndex;
+        me.opts.inputWrapper = me.opts.wrapper + ' ' + me.opts.inputWrapper + '-' + me.opts.inputIndex;
+    }
 
     // 外层
     me.$main = $(me.opts.handler);
@@ -59,7 +71,9 @@ var PhoneInput = function (options) {
     // 实际输入框
     me.$input = me.$main.find(me.opts.input);
 
-    me.$section = me.$main.parents(me.opts.section);
+    if (me.opts.detail) {
+        me.$inputWrapper = me.$main.parents(me.opts.inputWrapper);
+    }
 
     me._isEdit = false;
     me._defval = me.$input.html();
@@ -273,7 +287,7 @@ $.extend(PhoneInput.prototype, {
         // 删除按钮
         me.elems.$delete
             .on('click', function (e) {
-                var dom = $(this).parents(me.opts.section);
+                var dom = $(this).parents(me.opts.inputWrapper);
                 me._isEdit = true;
                 me.destroy(dom);
             });
@@ -343,13 +357,44 @@ $.extend(PhoneInput.prototype, {
     },
 
     /**
+     * 判断当前分类是否只有一个细则
+     *
+     * @return {boolean}, 是否是唯一
+     */
+    isOnly: function () {
+        var me = this;
+        var isOnly = true;
+        var n = 0;
+        var curr = me.opts.phoneInputs[me.opts.secIndex];
+        for (var k in curr) {
+            if (curr.hasOwnProperty(k)) {
+                n++;
+                if (n === 2) {
+                    isOnly = false;
+                    break;
+                }
+            }
+        }
+        return isOnly;
+    },
+
+    /**
      * destroy
      *
+     * @param {element} dom, 需要删除的dom节点
      */
     destroy: function (dom) {
         var me = this;
-        dom.remove();
-        me = null;
+        var phoneInputs = me.opts.phoneInputs;
+        var isOnly = me.isOnly();
+        if (isOnly && (me.opts.secIndex !== 0)) {
+            $(me.opts.wrapper).remove();
+            delete phoneInputs[me.opts.secIndex];
+        }
+        else {
+            dom.remove();
+            delete phoneInputs[me.opts.secIndex][me.opts.inputIndex];
+        }
     }
 });
 

@@ -6,7 +6,7 @@
  */
 
 require('./index.scss');
-var config = require('../config');
+// var config = require('../config');
 var navigation = require('common/middleware/navigation');
 var Page = require('common/page');
 var page = new Page();

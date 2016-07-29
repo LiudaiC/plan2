@@ -25,6 +25,7 @@ function Title(options) {
 }
 
 $.extend(Title.prototype, {
+
     /**
      * 初始化title
      *
@@ -32,7 +33,6 @@ $.extend(Title.prototype, {
     init: function () {
         var me = this;
         me.addDom();
-        var value = $.trim(me.$input.val());
         me.bindEvents();
         me.$input.triggerHandler('input');
     },
@@ -132,11 +132,12 @@ $.extend(Title.prototype, {
     /**
      * 是否能提交
      *
+     * @return {boolean} 是否可以提交
      */
     canSubmit: function () {
         var me = this;
         var length = $.trim(me.$input.value).length;
-        var isCan = length && (lenght <= me.opts.maxNumber);
+        var isCan = length && (length <= me.opts.maxNumber);
         return isCan;
     }
 });

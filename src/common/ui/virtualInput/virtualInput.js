@@ -7,7 +7,7 @@
  */
 require('dep/touch');
 // var fixIOS = require('common/ui/fix-ios');
-var util = require('common/util');
+// var util = require('common/util');
 
 var virtualInput = function (selector, options) {
 

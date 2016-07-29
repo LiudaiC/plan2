@@ -36,5 +36,13 @@ module.exports = {
     planTime: '计划时间',
     planTitle: '计划标题',
     pleaseChoose: '请选择',
-    mustWrite: '必填'
+    mustWrite: '必填',
+    pleaseInputplanClassify: '请输入计划分类',
+    planDetail: '计划细则',
+    addDetail: '添加细则',
+    addClassify: '添加分类',
+    pleaseInputPlanSummary: '请输入计划总结',
+    addAttach: '添加附件',
+    keepDraft: '保存草稿',
+    imPublish: '立即发布'
 };

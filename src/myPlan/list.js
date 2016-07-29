@@ -9,7 +9,7 @@ require('./list.scss');
 require('common/widgets/filter/filter.scss');
 
 var config = require('../config');
-var navigation = require('common/middleware/navigation');
+// var navigation = require('common/middleware/navigation');
 var InitPage = require('common/widgets/list/initPage');
 var Filter = require('common/widgets/filter/filter');
 var Page = require('common/page');
@@ -70,7 +70,7 @@ page.bindEvents = function () {
 };
 
 function loadPage() {
-    var $wrapper = $('.slider-container')
+    var $wrapper = $('.slider-container');
     var $loader = $wrapper.find('.data-more');
     var offset = $loader.height();
     page.list = new InitPage({

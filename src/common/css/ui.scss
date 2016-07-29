@@ -60,6 +60,36 @@ $circle-size: rem(45px);
     background-image: url('../img/popup_error.png');
 }
 
+@mixin add($color: #fff, $width: rem(2px), $height: rem(10px)) {
+    &:before {
+        position: absolute;
+        display: block;
+        content: ' ';
+        width: $height;
+        height: $width;
+        background-color: $color;
+        margin: 0 auto;
+        margin-top: rem(-1px) !important; // 初步怀疑是 webpack loader 把权重顺序输出反了
+        margin-left: rem(-4px) !important;
+        top: 50%;
+        left: 50%;
+    }
+
+    &:after {
+        position: absolute;
+        display: block;
+        content: ' ';
+        width: $width;
+        height: $height;
+        background-color: $color;
+        margin: 0 auto;
+        margin-top: rem(-4px);
+        margin-left: rem(-1px);
+        top: 50%;
+        left: 50%;
+    }
+}
+
 /**
  * Loading
  */

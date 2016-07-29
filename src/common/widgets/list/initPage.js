@@ -6,7 +6,7 @@
  * 列表页公用js
  */
 
-var config = require('../../../config');
+// var config = require('../../../config');
 var DataLoader = require('common/ui/dataLoader/dataLoader');
 var util = require('common/util');
 
@@ -246,23 +246,23 @@ $.extend(Init.prototype, {
                  * 离线机制
                  */
                 if (!util.isNetwork()) {
-                    var offlineData = coll.find({
-                        rid: rid,
-                        status: me.opts.status
-                    });
+                    // var offlineData = coll.find({
+                    //     rid: rid,
+                    //     status: me.opts.status
+                    // });
 
-                    me.renderMain(me.dataLoader, offlineData);
+                    // me.renderMain(me.dataLoader, offlineData);
 
-                    me.setBasic();
+                    // me.setBasic();
 
-                    me.offline();
-                    // 初始化滚动
-                    // me.initScroll();
+                    // me.offline();
+                    // // 初始化滚动
+                    // // me.initScroll();
 
-                    // 初始化了数据之后，直接禁用 loader
-                    me.dataLoader.disable();
+                    // // 初始化了数据之后，直接禁用 loader
+                    // me.dataLoader.disable();
 
-                    return;
+                    // return;
                 }
 
                 callback && callback(null);

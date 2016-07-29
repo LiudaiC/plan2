@@ -22,7 +22,7 @@ function Filter(selector, options) {
         itemClass: '.menu-item',
         tpl: filterTpl,
         wrapper: selector
-    }
+    };
 
     $.extend(this.opts, options);
     this.$wrap = $(selector);

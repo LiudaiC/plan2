@@ -10,9 +10,22 @@
 	<div id="main" class="main">
 		<div class="wrapper">
 			<div id="plan-options" class="plan-options"></div>
-			<div id="plan-content" class="plan-content"></div>
+			<div class="plan-content-wrapper">
+				<div id="plan-content" class="plan-content"></div>
+				<div id="addSection" class="add-section">
+					<i></i>
+					<em data-lang="addClassify"></em>
+				</div>
+			</div>
+			<div id="summary" class="summary"></div>
+		</div>
+		<div class="btn-wrapper">
+			<div class="btn" data-lang="keepDraft"></div>
+			<div class="btn" data-lang="imPublish"></div>
 		</div>
 	</div>
+
+	<!-- 计划选项 -->
 	<script id="plan-options-tmpl" type="x-tmpl-mustache">
 		<div class="options-inner">
 			<div class="option">
@@ -21,7 +34,7 @@
 			</div>
 			<div class="option">
 				<div class="title">{{ lang.planTime }}</div>
-				<div class="value placeholder">{{ time }}</div>
+				<div class="value {{^time}}placeholder{{/time}}">{{ time }} {{^time}}lang.pleaseChoose{{/time}}</div>
 			</div>
 			<div class="option plan-title">
 				<div class="title">{{ lang.planTitle }}</div>
@@ -29,22 +42,49 @@
 			</div>
 		</div>
 	</script>
+
+	<!-- 计划分类 -->
 	<script id="plan-content-tmpl" type="x-tmpl-mustache">
-		<div class="plan-content-section">
+		{{ #section }}
+		<div class="plan-content-section plan-content-section-{{ sectionIndex }}" data-index="{{ sectionIndex }}">
 			<div class="section-inner">
-				<div class="section-title"></div>
-				<div class="section-content">
+				<div class="section-title">
+					<input type="text" placeholder="{{ lang.pleaseInputplanClassify }}" />
+					{{ ^close }}
+					<div class="tip hide ">(必填)</div>
+					{{ /close }}
+					{{ #close }}
+					<i class="close-x section-colse"></i>
+					{{ /close }}
+				</div>
+				{{ #content }}
+				<div class="section-content section-content-{{ contentIndex }}" data-index="{{ contentIndex }}">
 					<div class="section-content-main">
 						<div class="status-btn">i</div>
-						<div class="input-main phone-input">
-							<div class="editable phone-input-main" contenteditable="plaintext-only" data-placeholder="计划细则"></div>
+						<div class="input-main phone-input phone-input-{{ contentIndex }}">
+							<div class="editable phone-input-main phone-input-main-{{ contentIndex }}" contenteditable="plaintext-only" data-placeholder="{{ lang.planDetail }}"></div>
 						</div>
 					</div>
 				</div>
+				{{ /content }}
 				<div class="add-main">
-					添加细则
+					{{ lang.addDetail }}
 				</div>
 			</div>
+		</div>
+		{{ /section }}
+	</script>
+
+	<!-- 总结 -->
+	<script id="summary-tmpl" type="x-tmpl-mustache">
+		<div class="summary-inner">
+			<div class="summary-input phone-input">
+				<div class="summary-input-editable phone-input-main" contenteditable="plaintext-only" data-placeholder="{{ lang.pleaseInputPlanSummary }}"></div>
+			</div>
+		</div>
+		<div id="attach" class="attach">
+			<div id="attachList" class="attach-list"></div>
+			<div id="attachBtn" class="attach-btn"><i class="icon-attach"></i>{{ lang.addAttach }}</div>
 		</div>
 	</script>
 	<script type="text/javascript" src="./cordova.js"></script>

@@ -4,8 +4,23 @@
 
 $placeholder-color: #b1b6bc;
 $tip-light: #fb5555;
+
+.main {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
 .wrapper {
-	margin-top: rem(15px);
+	padding-top: rem(15px);
+	position: absolute;
+	overflow: auto;
+	top: 0;
+	bottom: rem(50px);
+	left: 0;
+	right: 0;
 }
 
 .plan-options {
@@ -90,7 +105,7 @@ $tip-light: #fb5555;
 }
 
 .plan-content {
-	margin-top: rem(10px);
+
 	.plan-content-section {
 		background-color: $white;
 		@include border-1px(bottom, $border-color);
@@ -103,6 +118,25 @@ $tip-light: #fb5555;
 				height: rem(44px);
 				line-height: rem(42px);
 				@include border-1px(bottom, $border-color);
+				padding-right: rem(15px);
+				position: relative;
+
+				input {
+					border: none;
+					width: 100%;
+					font-size: rem(14px);
+				}
+
+				.section-colse {
+					position: absolute;
+					right: rem(15px);
+					top: 50%;
+					transform: translate(0, -50%);
+				}
+
+				.tip {
+					color: $tip-light;
+				}
 			}
 
 			.section-content {
@@ -176,6 +210,88 @@ $tip-light: #fb5555;
 		            border-radius: 50px;
 		        }
 			}
+		}
+	}
+}
+
+.add-section {
+	height: rem(44px);
+	line-height: rem(42px);
+	color: $blue;
+	background-color: $white;
+	margin-top: rem(10px);
+	padding-left: rem(40px);
+	position: relative;
+
+	i {
+		position: absolute;
+		left: rem(15px);
+		top: 50%;
+		transform: translate(0, -50%);
+		display: block;
+		height: rem(15px);
+		width: rem(15px);
+		border: 1px solid $blue;
+		background-color: $blue;
+		border-radius: 100%;
+
+		@include add(#fff, rem(1px), rem(7px));
+	}
+}
+
+.summary {
+	margin-top: rem(10px);
+	background-color: $white;
+	padding-top: rem(12px);
+	@include border-1px(bottom, $border-color);
+
+	.summary-inner {
+		margin-bottom: rem(12px);
+		margin-left: rem(15px);
+	}
+
+	.attach-btn {
+		height: rem(44px);
+		line-height: rem(42px);
+		color: #797c80;
+		@include border-1px(top, $border-color);
+		padding-left: rem(40px);
+		position: relative;
+
+		.icon-attach {
+			position: absolute;
+			display: block;
+			height: rem(15px);
+			width: rem(15px);
+			border-radius: 100%;
+			border: 1px solid #979797;
+			color: #979797;
+			top: 50%;
+			left: rem(15px);
+			transform: translate(0, -50%);
+			@include add(#979797, rem(1px), rem(7px));
+		}
+	}
+}
+
+.btn-wrapper {
+	height: rem(50px);
+	@include border-1px(top, $border-color);
+	background-color: $white;
+	position: absolute !important;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	color: $blue;
+	text-align: center;
+
+	.btn {
+		flex: 1;
+		line-height: rem(48px);
+
+		&:first-child {
+			@include border-1px(right, $border-color);
 		}
 	}
 }
