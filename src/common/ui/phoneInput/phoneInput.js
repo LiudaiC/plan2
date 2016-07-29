@@ -273,9 +273,9 @@ $.extend(PhoneInput.prototype, {
         // 删除按钮
         me.elems.$delete
             .on('click', function (e) {
-
+                var dom = $(this).parents(me.opts.section);
                 me._isEdit = true;
-                me.destroy();
+                me.destroy(dom);
             });
     },
 
@@ -346,9 +346,9 @@ $.extend(PhoneInput.prototype, {
      * destroy
      *
      */
-    destroy: function () {
+    destroy: function (dom) {
         var me = this;
-        me.$section.remove();
+        dom.remove();
         me = null;
     }
 });
