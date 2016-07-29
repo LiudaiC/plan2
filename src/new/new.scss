@@ -90,7 +90,7 @@ $tip-light: #fb5555;
 }
 
 .plan-content {
-
+	margin-top: rem(10px);
 	.plan-content-section {
 		background-color: $white;
 		@include border-1px(bottom, $border-color);
