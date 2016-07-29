@@ -10,26 +10,7 @@
 	<div id="main" class="main">
 		<div class="wrapper">
 			<div id="plan-options" class="plan-options"></div>
-			<div id="plan-content" class="plan-content">
-				<div class="plan-content-inner">
-					<div class="plan-content-section">
-						<div class="section-inner">
-							<div class="section-title"></div>
-							<div class="section-content">
-								<div class="section-content-main">
-									<div class="status-btn">i</div>
-									<div class="input-main phone-input">
-										<div class="editable phone-input-main" contenteditable="plaintext-only" data-placeholder="计划细则"></div>
-									</div>
-								</div>
-								<div class="add-main">
-									添加细则
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			<div id="plan-content" class="plan-content"></div>
 		</div>
 	</div>
 	<script id="plan-options-tmpl" type="x-tmpl-mustache">
@@ -45,6 +26,24 @@
 			<div class="option plan-title">
 				<div class="title">{{ lang.planTitle }}</div>
 				<input class="value input" type="text" value="{{ title }}">
+			</div>
+		</div>
+	</script>
+	<script id="plan-content-tmpl" type="x-tmpl-mustache">
+		<div class="plan-content-section">
+			<div class="section-inner">
+				<div class="section-title"></div>
+				<div class="section-content">
+					<div class="section-content-main">
+						<div class="status-btn">i</div>
+						<div class="input-main phone-input">
+							<div class="editable phone-input-main" contenteditable="plaintext-only" data-placeholder="计划细则"></div>
+						</div>
+					</div>
+				</div>
+				<div class="add-main">
+					添加细则
+				</div>
 			</div>
 		</div>
 	</script>

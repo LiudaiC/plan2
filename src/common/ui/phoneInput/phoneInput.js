@@ -36,6 +36,7 @@ var PhoneInput = function (options) {
     me.opts = {
         handler: '.phone-input',
         input: '.phone-input-main',
+        section: '',
 
         limit: false,
 
@@ -57,6 +58,8 @@ var PhoneInput = function (options) {
 
     // 实际输入框
     me.$input = me.$main.find(me.opts.input);
+
+    me.$section = me.$main.parents(me.opts.section);
 
     me._isEdit = false;
     me._defval = me.$input.html();
@@ -85,7 +88,6 @@ $.extend(PhoneInput.prototype, {
         this.bindEvents();
 
         this.inputStatusChange();
-        this.displayer('delete') && this.displayer('delete').hide();
     },
 
     /**
@@ -206,11 +208,9 @@ $.extend(PhoneInput.prototype, {
         if (isNull) {
             me.displayer('placeholder').show();
             me.displayer('limit').hide();
-            me.displayer('delete') && me.displayer('delete').hide();
         }
 
         if (isNotNull) {
-            me.displayer('delete') && me.displayer('delete').show();
             me.displayer('placeholder').hide();
         }
 
@@ -245,10 +245,6 @@ $.extend(PhoneInput.prototype, {
                 if (me.isNotNull() && !me.isOutLimit()) {
                     me.displayer('placeholder').hide();
                 }
-
-                if (me.isNotNull()) {
-                    me.displayer('delete').show();
-                }
             })
 
             // 输入状态
@@ -272,28 +268,14 @@ $.extend(PhoneInput.prototype, {
                 if (me.isNull()) {
                     me.displayer('placeholder').show();
                 }
-                // 保证当点击删除按钮时能正常删除
-                setTimeout(function () {
-                    me.displayer('delete').hide();
-                }, 0);
             });
 
         // 删除按钮
         me.elems.$delete
             .on('click', function (e) {
 
-                me.$input.text('');
-
-                if (me.$input.html() !== me._defval) {
-                    me._isEdit = true;
-                }
-                else {
-                    me._isEdit = false;
-                }
-
-                me.inputStatusChange();
-
-                me.$input.triggerHandler('input');
+                me._isEdit = true;
+                me.destroy();
             });
     },
 
@@ -358,6 +340,16 @@ $.extend(PhoneInput.prototype, {
      */
     isEdited: function () {
         return this._isEdit;
+    },
+
+    /**
+     * destroy
+     *
+     */
+    destroy: function () {
+        var me = this;
+        me.$section.remove();
+        me = null;
     }
 });
 

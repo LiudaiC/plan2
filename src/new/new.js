@@ -9,7 +9,7 @@
 require('./new.scss');
 var config = require('../config');
 var Title = require('./input/title');
-var PhoneInput = require('common/ui/phoneInput/phoneInput');
+var Section = require('./input/section');
 var Page = require('common/page');
 var page = new Page();
 
@@ -18,12 +18,10 @@ page.enter = function () {
     me.render('#plan-options', me.data);
     loadTitle();
 
-    me.phoneInput = new PhoneInput({
-        handler: '.phone-input',
-        input: '.phone-input-main',
-        limit: 50,
-        delete: true
-    })
+    me.section = new Section({
+        wrapper: '#plan-content',
+        page: me
+    });
 };
 
 page.deviceready = function () {
